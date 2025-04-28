@@ -44,7 +44,7 @@ DiffX/
 │   ├── nn.py            # Linear Layer, MLP, Losses
 │   ├── optim.py         # Optimizers
 ├── benchmark_iris.py    # Iris dataset benchmark
-├── utils.py  # Function to see in real time building of graph
+├── utils.py             # Function to see in real time building of graph
 ├── README.md            # This file
 ```
 
