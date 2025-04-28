@@ -46,6 +46,7 @@ DiffX/
 ├── benchmark_iris.py    # Iris dataset benchmark
 ├── utils.py             # Function to see in real time building of graph
 ├── README.md            # This file
+├── Diffx.pdf            # File paper-similar that goes deep in the theory and implementation
 ```
 
 ---
