@@ -32,7 +32,7 @@ class MLP:
         for i, layer in enumerate(self.layers):
             out = layer(out)
             if i < len(self.layers) - 1:
-                out = out.tanh() # attivazione solo nei hidden
+                out = out.tanh() 
         return out
 
     def parameters(self):
@@ -48,7 +48,7 @@ def mse_loss(pred, target):
     for v in values:
         total += v
 
-    return total / len(values)  # restituisce un singolo Value
+    return total / len(values)  
 
 # CrossEntropy Loss
 def safe_log(x, eps=1e-12):
@@ -57,8 +57,8 @@ def safe_log(x, eps=1e-12):
 def cross_entropy(pred, target):
     terms = []
     for i in range(len(pred.data)):
-        p = pred.data[i][0]           # Value
-        y = target.data[i][0]         # Value
+        p = pred.data[i][0]           
+        y = target.data[i][0]         
         term = y * safe_log(p) + (Value(1) - y) * safe_log(Value(1) - p)
         terms.append(term)
-    return -sum(terms)  # ✅ meno finale = loss positiva
+    return -sum(terms)  
