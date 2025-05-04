@@ -11,7 +11,7 @@ def trace_execution(root):
     
     build_topo(root)
 
-    print("\n🔁 Trace of backpropagation (topological order):\n")
+    print("\n Trace of backpropagation (topological order):\n")
 
     for node in reversed(topo):
         op = node._op or "leaf"
