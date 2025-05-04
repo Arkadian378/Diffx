@@ -94,7 +94,7 @@ class Tensor:
         result = []
         for row in self.data:
             new_row = []
-            for col in zip(*other.data):  # colonna come lista
+            for col in zip(*other.data):  
                 dot = sum([a * b for a, b in zip(row, col)])
                 new_row.append(dot)
             result.append(new_row)
@@ -133,13 +133,11 @@ class Tensor:
         n, m = self.shape
         assert n == m, "Matrice non quadrata"
 
-        # Copia della matrice A
         A = [[v for v in row] for row in self.data]
-        # Matrice identità
+
         I = [[Value(1.0 if i == j else 0.0, label=f"I[{i},{j}]") for j in range(n)] for i in range(n)]
 
         for i in range(n):
-            # Trova il pivot
             pivot = A[i][i]
             assert pivot.data != 0, "Pivot nullo, la matrice non è invertibile"
 
@@ -240,12 +238,12 @@ class Tensor:
         # Se è ancora una struttura annidata, ritorna Tensor
         if isinstance(result, list):
             return Tensor(result)
-        return result # se è un singolo Value
+        return result 
     
     @property
     def T(self):
         assert len(self.shape) == 2, "La trasposta è definita solo per Tensor 2D"
-        transposed = list(zip(*self.data))  # scambia righe e colonne
+        transposed = list(zip(*self.data)) 
         transposed = [list(row) for row in transposed]
         return Tensor(transposed)
     
