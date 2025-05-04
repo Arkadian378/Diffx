@@ -44,10 +44,10 @@ losses_diffx = []
 start = time.time()
 
 def softmax(tensor):
-    values = [v[0] for v in tensor.data]  # list of Value
-    max_val = max(v.data for v in values)  # massimo tra gli scalari
+    values = [v[0] for v in tensor.data]  
+    max_val = max(v.data for v in values) 
 
-    exps = [(v - max_val).exp() for v in values]  # stabilizzato
+    exps = [(v - max_val).exp() for v in values]  
     total = sum(exps)
     normed = [[e / total] for e in exps]
     return Tensor(normed)
